@@ -1,4 +1,4 @@
-package java.concurrency;
+package myjava.custom.myconcurrency;
 /******************************************************************************
 
                             Online Java Compiler.
