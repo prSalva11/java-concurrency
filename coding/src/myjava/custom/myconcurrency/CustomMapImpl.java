@@ -29,10 +29,12 @@ public class CustomMapImpl {
 	private class CustomMap<K, V> {
 		Node<K, V> table[];
 		int capacity;
+		Lock lock;
 
 		CustomMap(int n) {
 			this.capacity = n;
 			table = new Node[this.capacity];
+			lock = new ReentrantLock(true);
 		}
 
 		private int getIndex(K key) {
@@ -44,7 +46,7 @@ public class CustomMapImpl {
 			int index = getIndex(key);
 			log("Putting " + key + " at buckedIndex = " + index);
 
-			Lock lock = new ReentrantLock(true);
+			
 			lock.lock();
 			try {
 				if (table[index] == null) {
