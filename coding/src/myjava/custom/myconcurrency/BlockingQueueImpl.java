@@ -80,6 +80,9 @@ public class BlockingQueueImpl
             Node<T> node = head;
             head = head.next;
             --this.count;
+            if(this.count  == 0) {
+            	trail = null;
+            }
             notifyAll();
             return node.data;
         }
