@@ -8,3 +8,6 @@ Every java object can implicitly act as a lock for purposes of synchronization. 
 
 ### synchronized block:
 Synchronized block is a built-in locking mechanism for enforcing atomicity. It has two parts: one is a reference to the object which serves as a lock and other is the block of code to be guarded by this lock.
+
+### Reentrancy:
+Reentrancy means that locks are acquired on a per-thread basis rather than per-invocation basis. Reentrancy is implemented by associating with each lock an acquisition count and an owning thread.
