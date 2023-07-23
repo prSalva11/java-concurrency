@@ -16,7 +16,7 @@ CRUD save should appear in this order:
 
 ```java
 
-return = modelAR2Repository.save(modelA);
+return modelAR2Repository.save(modelA);
         }).flatMap(modelAResponse ->{
             Mono<modelBResponse> modelBResponse = modelBR2Repository.save(createModelBFromModelA(modelAResponse));
             return modelBResponse.flatMap(modelBResponse -> Mono.just(modelAResponse));
