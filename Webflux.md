@@ -3,9 +3,11 @@ We have a lot of contents on Web flux right but here we are going to discuss abo
 Scenario1:
 Lets say SAVE-C is dependent on SAVE-A and SAVE-B is also dependent on SAVE-A viz. 
 CRUD save should appear in this order: 
+```
          SAVE-A
         /       \
       SAVE-B   SAVE-C
+```
 
 /*
    Below code represents the scenario:
