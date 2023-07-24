@@ -2,7 +2,7 @@ We have a lot of contents on Web flux right but here we are going to discuss abo
 
 * Never use subscribe inside flatMap when you are returning a Mono or Flux to the client.
   Reason: subscribe applied to the Mono/Flux will execute code associated with it and this code will again get executed when the Mono/Flux as a response received by the caller. Example
-  ```
+  ```java
   Mono<ModelA> monoModelA =  modelAR2Repository.save(modelA);
   monoModelA.subscribe(mod ->{
            //some other async operation on mod.
@@ -46,7 +46,7 @@ Scenario2:
 Lets say SAVE-C is dependent on SAVE-B and SAVE-B is also dependent on SAVE-A viz. 
          SAVE-A   --> SAVE-B   ---> SAVE-C
 In this case, we are returning saved result to be used in the next operation.
-```
+```java
 return modelAR2Repository.save(modelA);
         }).flatMap(modelAResponse ->{
             Mono<modelBResponse> modelBResponse = modelBR2Repository.save(createModelBFromModelA(modelAResponse));
