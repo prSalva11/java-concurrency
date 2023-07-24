@@ -12,7 +12,7 @@ We have a lot of contents on Web flux right but here we are going to discuss abo
   ```
 In the above case, monoModelA will be saved twice viz. if its Mongo, you can see two documents persisted with same payload but different ids.
 
-Scenario1:
+**Scenario1:
 Lets say SAVE-C is dependent on SAVE-A and SAVE-B is also dependent on SAVE-A viz. 
 CRUD save should appear in this order: 
 ```
@@ -42,7 +42,7 @@ return modelAR2Repository.save(modelA);
         });
 
 ```
-Scenario2: 
+**Scenario2: 
 Lets say SAVE-C is dependent on SAVE-B and SAVE-B is also dependent on SAVE-A viz. 
          SAVE-A   --> SAVE-B   ---> SAVE-C
 In this case, we are returning saved result to be used in the next operation.
